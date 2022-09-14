@@ -1,0 +1,26 @@
+lockfileVersion: 5.4
+
+specifiers:
+  node-cron: 3.0.0
+
+dependencies:
+  node-cron: 3.0.0
+
+packages:
+
+  /moment-timezone/0.5.37:
+    resolution: {integrity: sha512-uEDzDNFhfaywRl+vwXxffjjq1q0Vzr+fcQpQ1bU0kbzorfS7zVtZnCnGc8mhWmF39d4g4YriF6kwA75mJKE/Zg==}
+    dependencies:
+      moment: 2.29.4
+    dev: false
+
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
+
+  /node-cron/3.0.0:
+    resolution: {integrity: sha512-DDwIvvuCwrNiaU7HEivFDULcaQualDv7KoNlB/UU1wPW0n1tDEmBJKhEIE6DlF2FuoOHcNbLJ8ITL2Iv/3AWmA==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      moment-timezone: 0.5.37
+    dev: false
