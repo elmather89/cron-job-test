@@ -1,6 +1,19 @@
 // import { regexCheck } from './regexCheck.js';
 // import mySources from './constants.js';
 // import cron from 'node-cron';
+import { datadogLogs } from '@datadog/browser-logs';
+import dotenv from 'dotenv';
+
+dotenv.config({
+    path: '../.env',
+});
+
+datadogLogs.init({
+    clientToken: process.env.DATADOG_CLIENT_TOKEN,
+    site: 'datadoghq.com',
+    forwardErrorsToLogs: true,
+    sampleRate: 100
+});
 
 
 // const checkHtml = (mySources) => {
@@ -13,11 +26,14 @@
 const checkData = (data) => {
     if (data && typeof data !== 'string') {
         console.log('***********');
+        // // datadogLogs.logger.info('Button clicked', { name: 'buttonName', id: 123 });
+        datadogLogs.logger.info('Not string', { name: 'data', id: 123 });
         throw 'Error, Data is not a string. Got: ' + typeof data;
     };
 
     if (!data || data == undefined || data == null) {
         console.log('***********');
+        datadogLogs.logger.info('No data', { name: 'data', id: 123 });
         throw 'Error, No data. Got: ' + data;
     };
 };
