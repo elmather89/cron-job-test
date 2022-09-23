@@ -2,11 +2,11 @@
 // import mySources from './constants.js';
 // import cron from 'node-cron';
 import { datadogLogs } from '@datadog/browser-logs';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 
-dotenv.config({
-    path: '../.env',
-});
+// dotenv.config({
+//     path: '../.env',
+// });
 
 datadogLogs.init({
     clientToken: process.env.DATADOG_CLIENT_TOKEN,
