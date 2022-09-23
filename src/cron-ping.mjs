@@ -1,20 +1,11 @@
 // import { regexCheck } from './regexCheck.js';
 // import mySources from './constants.js';
 // import cron from 'node-cron';
-import { datadogLogs } from '@datadog/browser-logs';
 // import dotenv from 'dotenv';
 
 // dotenv.config({
 //     path: '../.env',
 // });
-
-datadogLogs.init({
-    clientToken: process.env.DATADOG_CLIENT_TOKEN,
-    site: 'datadoghq.com',
-    forwardErrorsToLogs: true,
-    sampleRate: 100
-});
-
 
 // const checkHtml = (mySources) => {
 //     for (const source of mySources) {

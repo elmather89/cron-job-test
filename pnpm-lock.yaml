@@ -1,33 +1,16 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@datadog/browser-logs': ^4.19.1
   dotenv: ^16.0.2
   node-cron: 3.0.0
   puppeteer: ^17.1.3
 
 dependencies:
-  '@datadog/browser-logs': 4.19.1
   dotenv: 16.0.2
   node-cron: 3.0.0
   puppeteer: 17.1.3
 
 packages:
-
-  /@datadog/browser-core/4.19.1:
-    resolution: {integrity: sha512-BoHpweDiX1ImYZihaD4oiWG2VZb6iDNfaj/si1Rnb5zJ30tFDvbwpEp2UT79Pg08PwGKWK6ra6xXpW5ennkaHw==}
-    dev: false
-
-  /@datadog/browser-logs/4.19.1:
-    resolution: {integrity: sha512-WGX/LC1hAB6HpWjAy2TqDSKX8eRFD1Ome+gLOTD0BkRT0cwgk/WDNXZB0aF9+VbSJSlu68h0VIg2OVsB9PnIuA==}
-    peerDependencies:
-      '@datadog/browser-rum': 4.19.1
-    peerDependenciesMeta:
-      '@datadog/browser-rum':
-        optional: true
-    dependencies:
-      '@datadog/browser-core': 4.19.1
-    dev: false
 
   /@types/node/18.7.18:
     resolution: {integrity: sha512-m+6nTEOadJZuTPkKR/SYK3A2d7FZrgElol9UP1Kae90VVU4a6mxnPuLiIW1m4Cq4gZ/nWb9GrdVXJCoCazDAbg==}
