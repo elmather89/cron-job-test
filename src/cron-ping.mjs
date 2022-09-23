@@ -17,14 +17,11 @@
 const checkData = (data) => {
     if (data && typeof data !== 'string') {
         console.log('***********');
-        // // datadogLogs.logger.info('Button clicked', { name: 'buttonName', id: 123 });
-        datadogLogs.logger.info('Not string', { name: 'data', id: 123 });
         throw 'Error, Data is not a string. Got: ' + typeof data;
     };
 
     if (!data || data == undefined || data == null) {
         console.log('***********');
-        datadogLogs.logger.info('No data', { name: 'data', id: 123 });
         throw 'Error, No data. Got: ' + data;
     };
 };
