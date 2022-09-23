@@ -39,7 +39,7 @@ const checkData = (data) => {
 };
 
 try {
-    checkData('cool string');
+    checkData(123);
     // checkHtml(mySources);
 } catch (err) {
     console.error(err);
