@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@datadog/browser-logs": "^4.19.1",
     "@sendgrid/mail": "^7.7.0",
     "dotenv": "^16.0.2",
     "node-cron": "3.0.0",
