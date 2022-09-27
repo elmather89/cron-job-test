@@ -1,45 +1,26 @@
-// import { regexCheck } from './regexCheck.js';
-// import mySources from './constants.js';
-// import cron from 'node-cron';
-// import dotenv from 'dotenv';
+import sgMail from '@sendgrid/mail';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-// dotenv.config({
-//     path: '../.env',
-// });
+const mail = sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-// const checkHtml = (mySources) => {
-//     for (const source of mySources) {
-//         // console.log(source);
-//         regexCheck(source);
-//     }
-// };
+console.log(process.env.SENDGRID_API_KEY);
 
-const checkData = (data) => {
-    if (data && typeof data !== 'string') {
-        console.log('***********');
-        throw 'Error, Data is not a string. Got: ' + typeof data;
-    };
-
-    if (!data || data == undefined || data == null) {
-        console.log('***********');
-        throw 'Error, No data. Got: ' + data;
-    };
+const msg = {
+    to: 'liz@gpsimpact.com', // Change to your recipient
+    from: process.env.VERIFIED_SENDER, // Change to your verified sender
+    templateId: process.env.SENDGRID_TEMPLATE_ID,
+    dynamic_template_data: {
+        errorType: 'Big Error type...',
+        errorMessage: 'Big error message goes here.',
+    },
 };
 
-try {
-    checkData(123);
-    // checkHtml(mySources);
-} catch (err) {
-    console.error(err);
-};
-
-
-// cron.schedule('* * * * * *', () => {
-//     console.log('running a task every minute');
-//     // checkHtml(mySources);
-//     try {
-//         checkHtml(mySources);
-//     } catch (err) {
-//         console.error(err);
-//     };
-// });
+sgMail.send(msg)
+    .then((response) => {
+        console.log(response[0].statusCode)
+        console.log(response[0].headers)
+    })
+    .catch((error) => {
+        console.error(error)
+    });
